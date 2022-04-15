@@ -47,7 +47,7 @@ Bae 3 2
 		int [] subject3 = new int[n];
 		
 		//인덱스값으로 모든걸 비교
-		//int res_index = 0; 필요할줄 알고 선언했었는데 필요가 없었다.
+		//int res_index = 0; //필요할줄 알고 선언했었는데 필요가 없었다.
 		int first_index = 0;
 		//int second_index = 0; 
 		//int third_index = 0;	
