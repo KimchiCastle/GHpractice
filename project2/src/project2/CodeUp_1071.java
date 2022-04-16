@@ -32,7 +32,7 @@ public class CodeUp_1071 {
 			
 			System.out.printf("%d ", all_stu[j]);
 			
-			if (j != 0 && (j+1) % jari == 0) {
+			if (j != 0 && (j+1) % jari == 0 || jari == 1) {
 
 				System.out.println();
 			}
