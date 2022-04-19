@@ -37,6 +37,30 @@ P5h3kx
 	Aa0aPAf985Bz1EhCz2W3D1gkD6x
 		
 */
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		StringBuilder [] sb = new StringBuilder[15];
+		String s = new String();
+
+		for(int i=0; i<15; i++) {
+			sb[i] = new StringBuilder();
+		}
+		
+		for(int i=0; i<5; i++) {
+				s= br.readLine();
+				for(int k=0; k<s.length(); k++) {
+					sb[k].append(s.charAt(k));
+				}
+		}
+		
+		for(int k=0; k<15; k++) {
+			System.out.print(sb[k]);
+		}
+		
+		
+		
+		
+		/*
 		BufferedReader br = new BufferedReader( new InputStreamReader(System.in));
 		StringBuffer sb = new StringBuffer();
 		char [][] st1 = new char [5][15];
@@ -59,6 +83,7 @@ P5h3kx
 			}
 		}
 		System.out.println(sb);
+		*/
 	}
 
 }
