@@ -3,7 +3,7 @@ package project2;
 
 import java.util.Scanner;
 
-public class practice {
+public class practice2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -37,19 +37,12 @@ public class practice {
 		
 			if (a.charAt(i) == 'l' && a.charAt(i + 1) == 'o' && a.charAt(i + 2) == 'v' && a.charAt(i + 3) == 'e') { // l 찾기
 
-				if (a.charAt(i + 1) == 'o') { // 그다음문자가o인지
-
-					if (a.charAt(i + 2) == 'v') { // 그다음문자가 v인지
-						
-						if (a.charAt(i + 3) == 'e') { // 그다음문자가 e인지
+				 
 							count++;
 
-						}
+				}
 
-					}
-
-				} 
-			}
+		
 		}
 		System.out.println(count);
 
