@@ -37,6 +37,8 @@ P5h3kx
 	Aa0aPAf985Bz1EhCz2W3D1gkD6x
 		
 */
+		
+		/*
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		StringBuilder [] sb = new StringBuilder[15];
@@ -57,33 +59,38 @@ P5h3kx
 			System.out.print(sb[k]);
 		}
 		
+		*/
 		
-		
-		
-		/*
 		BufferedReader br = new BufferedReader( new InputStreamReader(System.in));
 		StringBuffer sb = new StringBuffer();
+		
+		//입력값을 넣어줄 배열생성
 		char [][] st1 = new char [5][15];
 		
 		
-		for(int i = 0 ; i<5; i++) {
+		//입력값 생성된 배열 삽입
+		for(int i = 0 ; i<5; i++) {	// 행만큼 반복
 			String info = br.readLine();
 			
-			for(int k = 0; k<info.length(); k++) {
-				st1[i][k] = info.charAt(k);
+			for(int k = 0; k<info.length(); k++) { // 스트링 문자열 길이만큼 반복
+			
+				st1[i][k] = info.charAt(k); // 문자열을 1글자씩캐릭터형으로 잘라낸다.
 			}
-			
-			
+		
 		}
 		
-		for(int i = 0; i<15; i++) {
-			for(int k = 0; k<st1.length; k++) {
-				if(st1[k][i]=='\0') continue;
-				 sb.append(st1[k][i]);
+		
+		for(int i = 0; i<15; i++) { //15번 반복을 해야한다 그렇지 않으면 에러 발생
+			
+			for(int k = 0; k<st1.length; k++) { //배열의 행만큼 반복
+			
+				if(st1[k][i]=='\0') continue; //배열 값이 비어있으면 반복문 넘기기
+				
+				sb.append(st1[k][i]);
 			}
 		}
 		System.out.println(sb);
-		*/
+		
 	}
 
 }
