@@ -23,7 +23,7 @@ public class 연습장 {
 		plus = num[0] + num[1];
 		
 		System.out.println(plus);
-		*/
+		
 		Scanner sc = new Scanner(System.in);
 		
 		String n = sc.next();
@@ -34,6 +34,28 @@ public class 연습장 {
 		}
 		
 		System.out.println(n);
+		*/
+		/*
+		int n = 3;
+		
+		
+		
+		System.out.println(n);
+		
+		 int []arr = new int [100_000_000];
+		 
+		 
+		 int x = (int)3.5;
+		
+		 double a = 3;
+		 */
+		
+		int n = 26%10;
+		
+		int x = 26/10;
+	
+		
+		System.out.printf("%d %d",n,x);
 	}
 
 }
