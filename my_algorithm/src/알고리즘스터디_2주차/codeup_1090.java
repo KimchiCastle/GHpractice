@@ -33,6 +33,8 @@ public class codeup_1090 {
 		
 		System.out.println(a);
 		
+	
+		
 		
 	}
 
