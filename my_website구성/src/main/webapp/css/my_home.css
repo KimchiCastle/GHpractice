@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+/* 웹표준화를 위한 margin 0 */
+*{ margin: 0; }
+
+
+
+/* 전체크기설정 */
+#main_box{
+	
+	width :  800px;
+	height : 800px;
+	
+	margin : auto;
+	
+	/* background: #cccccc; */	
+}
+
+
+#header{
+	width: 80%;
+	height: 100px;
+	
+	float : left;
+}
+#header2{
+	
+	margin:auto;
+	
+	width: 20%;
+	height: 100px;
+	
+	/* background: #ffffcc; */
+	
+	float : left;
+}
+
+#aside{
+	width: 25%;
+	height: 400px;
+	background-image :url('../img/img_01.gif');
+	background-size: 200px 400px;
+	float : left;
+}
+
+
+
+
+#content{
+	width: 75%;
+	min-height: 400px; /* 최소크기 */
+	height : auto; /* 높이 자동으로 */
+	background: #ccffcc;
+	
+	float : left;
+}
+
+#footer{
+		/* loat속성 해지 */
+	clear : both;
+	
+	width: 100%;
+	height: 100px;
+	background: #ccccff;
+	
+}
+
+
+#title{
+	
+	/* margin-top: 15px; */
+	text-align : center;
+	font-size: 30px;
+	color: #ccffcc;
+	text-shadow: 1px 1px 4px black;
+}
+
+	
+	

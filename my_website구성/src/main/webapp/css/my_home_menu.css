@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+
+#main_menu{
+	
+	list-style: none;
+}
+
+
+#main_menu > li{
+	
+
+	
+	display: inline-block;
+	
+	/* margin-top: 15px; */
+	margin-left: 15px;
+	
+	font-size: 20px;
+	text-align: center;
+	
+	
+
+	/* border: 1px solid red; */
+	
+}
+
+#main_menu > li > a{
+	display: block;
+	text-decoration: none;
+	color: blue;
+}
+
+#main_menu > li > a:hover {
+	color: red;
+}

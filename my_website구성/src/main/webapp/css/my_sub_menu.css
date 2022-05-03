@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.submenu_type{
+	
+	list-style: none;
+	
+	
+}
+
+.submenu_type > li {
+	
+	margin-top: 30px; 
+	
+}
+
+.submenu_type > li > a{
+	
+	/* 인라인 요소라 크기지정이 되질 않는다. */
+	display: block;
+	width: 110px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 12pt;
+	color: #004080;
+
+	/* border: 1px red solid; */
+
+}
+
+.submenu_type > li > a:hover {
+	color: red;
+}

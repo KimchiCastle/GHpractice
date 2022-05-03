@@ -38,14 +38,13 @@ public class backjoon_1931 {
 		
 			
 		}
-		/*
-		앞으로는 객체정렬시, 익명클래스로 재정의 하는 습관 기르자.
+		
 		Arrays.sort(mytime, new Comparator<Time>() {
 
 			@Override
 			public int compare(Time a1, Time a2) {
 				// TODO Auto-generated method stub
-				정렬시 여러 조건들을 다 고려하고 전부 구현해야 한다.
+				//정렬시 여러 조건들을 다 고려하고 전부 구현해야 한다.
 				if(a1.end_time == a2.end_time) {
                     return a1.start_time - a2.start_time;
                 }else {
@@ -54,7 +53,7 @@ public class backjoon_1931 {
 			}
 		});
 		
-		*/
+		
 		
 		Arrays.sort(mytime);
 		
@@ -132,15 +131,16 @@ public class backjoon_1931 {
 			this.end_time   = e_time;
 		}
 		
-		/* 제네릭스 활용했으면 힘들게 다운캐스팅 안해도 됐다!!
-		@Override
-		public int compareTo(Object o) {
+		 //제네릭스 활용했으면 힘들게 다운캐스팅 안해도 됐다!!
+		 
+		/*
+		 @Override
+		public int compareTo(Time o) {
 			// TODO Auto-generated method stub
 			//여기서 시작시간이 같을경우도 같이 체크 해줘야한다!!!
-			return this.end_time - ((Time)o).end_time;
+			return this.end_time - o.end_time;
         }  
 		*/
-		
 		
 		
 		@Override
