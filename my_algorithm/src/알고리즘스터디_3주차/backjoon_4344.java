@@ -28,7 +28,7 @@ public class backjoon_4344 {
 		
 		for(int i=0; i<N; i++) {
 			
-			st = new StringTokenizer(br.readLine(), " ");
+			st = new StringTokenizer(br.readLine());
 			//학생수
 			int a = Integer.parseInt(st.nextToken());
 		
@@ -44,7 +44,7 @@ public class backjoon_4344 {
 				
 			}
 			//평균만들기
-			avg[i] /= a;
+			avg[i] = avg[i]/a;
 			
 			double count = 0;
 			

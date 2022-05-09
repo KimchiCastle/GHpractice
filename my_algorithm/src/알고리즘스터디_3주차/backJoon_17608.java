@@ -11,7 +11,7 @@ public class backJoon_17608 {
 		// TODO Auto-generated method stub
 
 /*		
-6
+6 fdfdfdsf dffsdfdsfsd
 6
 9
 7
