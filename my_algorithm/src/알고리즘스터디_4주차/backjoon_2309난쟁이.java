@@ -32,7 +32,7 @@ public class backjoon_2309≥≠¿Ô¿Ã {
 		
 		StringBuilder sb = new StringBuilder();
 		
-		for(int i=0; i<nan.length; i++) {
+		for(int i=0; i<nan.length-1; i++) {
 			//∏¯√£æ“¿∏∏È «—ƒ≠æø ¥√∑¡º≠
 			for(int k=i+1; k<nan.length; k++) {
 				
