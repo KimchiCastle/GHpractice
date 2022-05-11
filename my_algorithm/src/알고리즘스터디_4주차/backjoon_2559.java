@@ -37,8 +37,7 @@ public class backjoon_2559 {
 		}
 		
 		//여기서 반복을 N번해버리니 당연히 익셉션발생
-		//
-		
+	
 		for(int i=0; i<(N-K)+1; i++){
 			
 			int a = 0;
