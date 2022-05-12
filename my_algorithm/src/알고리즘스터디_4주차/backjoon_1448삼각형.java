@@ -27,6 +27,8 @@ public class backjoon_1448삼각형 {
 5
 
 */		
+		
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		StringTokenizer st = new StringTokenizer(br.readLine());
@@ -87,12 +89,12 @@ public class backjoon_1448삼각형 {
 			break;
 		}
 		
-		/*
+		
 		for(int a : list) {
 			System.out.println(a);
 		}
-		*/
 		
+		System.out.println();
 		
 		
 		//컬랙션 메소드에 있는 내림차순 메소드
