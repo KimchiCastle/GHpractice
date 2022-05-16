@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+	var regular_number = /\d/;
+
+
+	function send(f) {
+
+		//입력된 값의 유효성 체크
+		var su1 = f.su1.value;
+		var su2 = f.su2.value;
+		
+		
+		if(regular_number.test(su1)==false){
+			alert("숫자만 입력하세요");
+			f.su1.value ="";
+			f.su1.focus();
+			return;
+		}
+		
+		if(regular_number.test(su2)==false){
+			alert("숫자만 입력하세요");
+			f.su2.value = "";
+			f.su2.focus();
+			return;
+		}
+		
+		
+		//지정된 action으로 데이터 전송
+		f.submit();
+		
+		
+	}
+	
+
+
+</script>
+
+
+</head>
+<body>
+
+<form action="calc.do">
+	<input name="su1"><br>
+	<input name="su2"><br>
+
+	<input type="button" value="계산해줘요" onclick="send(this.form);">
+
+</form>
+
+
+
+
+</body>
+</html>

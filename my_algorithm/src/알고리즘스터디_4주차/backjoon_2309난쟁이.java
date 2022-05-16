@@ -49,8 +49,8 @@ public class backjoon_2309난쟁이 {
 					// 조건을 다 찾았을 경우 리턴해서 메인메소드를 끝내버려야함.
 					// 리턴 전에 답 출력하고 리턴!!
 					System.out.println(sb);
-					//메인메소드 자체를 종료
 					return;
+					//메인메소드 자체를 종료
 				}// 비교문 end;
 				
 				
