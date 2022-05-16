@@ -6,6 +6,9 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class backjoon_11501주식천재 {
+	
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder();
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
@@ -35,36 +38,50 @@ public class backjoon_11501주식천재 {
 10
 5	
 */	
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		StringTokenizer st;
 		
-		StringBuilder sb = new StringBuilder();
 		
 		int N = Integer.parseInt(br.readLine());
 		
-//		int [][] array = new int[N][];
-//		
-//		for(int i = 0; i<N; i++) {
-//			
-//			int a = Integer.parseInt(br.readLine());
-//			
-//			st = new StringTokenizer(br.readLine());
-//			array[i] = new int[a];
-//			
-//			for(int k=0; k<a;k++) {
-//				array[i][k] = Integer.parseInt(st.nextToken());
-//			}
-//			
-//			
-//		}
-		
-		for (int i = 0; i < N ; i++) {
+		for(int i=0; i<N; i++) {
+			st = new StringTokenizer(br.readLine());
+			
+			int m = Integer.parseInt(st.nextToken()); 
+			
+			money(m);
 			
 		}
 		
+		System.out.println(sb);
+	}
+
+	private static void money(int m) throws IOException {
+		// TODO Auto-generated method stub
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		
+		int [] m2 = new int [m];
+		//배열안에 주식 값 넣기
+		for(int i=0; i<m; i++) {
+			m2[i] = Integer.parseInt(st.nextToken());
+		}
 		
 		
+		long mymoney = 0;
+		int max = 0;
+		for(int i=m2.length-1; i>-1; i--) {
+			
+			//만약 맥스값이 작으면
+			if(m2[i]>max) {
+				//팔지않고 맥스값을 변경
+				max = m2[i];
+			}else
+				//맥스값이 더 크면 주식 팔기
+				mymoney += max - m2[i];
+			
+		}
+		
+		sb.append(mymoney).append("\n");
 		
 	}
 
