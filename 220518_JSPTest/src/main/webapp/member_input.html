@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- Bootstrap 3.x 사용설정 : CDN(Content Delivery Network) -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<!-- w3.css 사용설정 -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<script type="text/javascript">
+
+	function send(f) {
+		
+		//필수 입력 항목
+		var name = f.name.value.trim();
+		var id	 = f.id.value.trim();
+		var pwd	 = f.pwd.value.trim();
+		var email = f.email.value.trim();
+		var profile = f.profile.value.trim();
+		
+
+		//공백체크 
+		
+		//아이디 체크
+		if(id==''){
+			alert('ID를 입력하세요.');
+			f.id.value='';
+			f.id.focus();
+			return;
+		}
+		//비밀번호 체크
+		if(pwd==''){
+			alert('비밀번호를 입력하세요.');
+			f.pwd.value='';
+			f.pwd.focus();
+			return;
+		}
+		//이름 체크
+		if(name==''){
+			alert('이름을 입력하세요.');
+			f.name.value='';
+			f.name.focus();
+			return;
+		}
+		//이메일 체크
+		if(email==''){
+			alert('이메일을 입력하세요.');
+			f.email.value='';
+			f.email.focus();
+			return;
+		}
+		//자기소개 입력 체크
+		if(profile==''){
+			alert('자기소개를 입력하세요.');
+			f.profile.value='';
+			f.profile.focus();
+			return;
+		}
+		
+		//전송방식
+		f.method="GET";
+			
+		//전송대상
+		f.action = "member_result.jsp";
+		
+		//전송
+		f.submit();
+		
+	}
+
+</script>
+
+
+
+<style type="text/css">
+	#box{
+		width : 600px;
+		min-height: 300px;
+		/* border : 1px solid blue; */
+		margin: auto;
+		margin-top: 100px; 
+	}
+
+/* 	table{
+		width: 100%;
+	}
+ */
+
+</style>
+
+</head>
+<body>
+
+	<div id="box">
+	  <div class="panel panel-success">
+        <div class="panel-heading"><h3 style="text-align: center">회원가입</h3></div>
+        <div class="panel-body">
+          <form action="">
+          <!-- table -->
+           <table style=" margin: auto; ">
+             
+			 <!-- 아이디 -->             
+             <tr>
+               <th><label for="usr">I D :</label></th>
+             </tr>
+             <tr>
+               <th><input type="text"  class="form-control" name="id" style="margin-bottom :10px;"></th>
+               <td><button type="button" class="btn btn-default" style="margin-bottom :10px; margin-left:  10px;">중복확인</button></td>
+             </tr>
+           	 
+           	 
+           	 <!-- 비번 -->
+           	 <tr>
+           	   <th><label for="pwd" >비밀번호 :</label></th>
+           	 </tr>
+           	 
+           	 <tr>
+           	   <th ><input type="password" class="form-control" name="pwd" style="margin-bottom :10px;"></th>
+           	 </tr>
+           	 
+           	 <!-- 이름 -->
+             <tr>
+               <th><label for="name" >이름 :</label></th>
+			 </tr>
+            
+             <tr>
+               <th><input type="text" class="form-control" name="name" style="margin-bottom :10px;"></th>
+             </tr>
+           	 
+           	 <!-- 이메일 -->
+           	 <tr>
+               <th><label for="email" >e-mail :</label></th>
+			 </tr>
+            
+            
+           
+             <tr>
+               <th><input type="text" class="form-control" name="email" style=" display: inline; width:48%; margin-bottom :10px;">
+               @
+               
+               <select class="form-control" name="email2" style=" display: inline; width:45%; margin-bottom :10px;">
+				    <option value="gmail.com" selected>gmail.com</option>
+				    <option value="1" >직접입력</option>
+				    <option value="naver.com" >naver.com</option>
+				  </select>
+               
+               
+               </th>
+            
+               
+			   
+			 	         
+               <td><button type="button" class="btn btn-default" style="margin-bottom :10px; margin-left:  10px;">중복확인</button></td>
+             </tr>
+           	 
+           	 
+           	 
+           	 <!-- 성별 -->
+           	 <tr>
+               <th><label for="gender" >성별 :</label></th>
+			 </tr>
+           	 
+           	 
+           	 <tr>
+           	  <th> <label class="radio-inline"><input type="radio" name="gender" value="남자" checked>남자</label>
+			   <label class="radio-inline"><input type="radio" name="gender" value="여자">여자</label>
+			   </th>
+           	 </tr>
+           	 
+           	 
+           	 <!-- 취미 -->
+           	 <tr>
+               <th><label for="hoby" >취미 :</label></th>
+			 </tr>
+           	 <!-- 체크박스 : 서버측에서 수신시 배열로 받는다. 체크된 정보만 넘어간다. -->
+           	 
+           	 <tr>
+           	   <th>
+	           	  <label class="checkbox-inline"><input type="checkbox" value="독서" name="hobby">독서</label>
+	           	  <label class="checkbox-inline"><input type="checkbox" value="운동" name="hobby">운동</label>
+				  <label class="checkbox-inline"><input type="checkbox" value="게임" name="hobby">게임</label>
+				  <label class="checkbox-inline"><input type="checkbox" value="음악감상" name="hobby">음악감상</label>
+           	   </th>
+           	 </tr>
+           
+           
+           <!-- 추천인 -->
+             <tr>
+               	  <th><label for="추천인1" >추천인 I D :</label></th>
+             </tr>
+             
+             
+             <tr>
+               <th><input type="text" class="form-control" name="recommender"  style="margin-bottom :10px;"></th>
+             </tr>
+           
+           
+           <!-- MBTI -->
+             <tr>
+             	<th><label for="MBTI" >MBTI :</label></th>
+             
+             </tr>
+             
+             <tr>
+             	<td>
+               	  <select class="form-control" name="MBTI" style="margin-bottom :10px;">
+				    <option value="ENFP" >ENFP</option>
+				    <option value="INFP">INFP</option>
+				  </select>
+			 
+			 	</td>           
+             </tr>
+           
+           
+           <!-- 첨부파일 -->
+<!--            <tr>
+             	<th><label for="photo" >첨부파일(사진) :</label></th>
+            </tr>
+           
+           <tr>  
+             <td><input type="file" name="photo" style="margin-bottom :10px;"></td>
+		   </tr>
+            -->
+           <!-- 자기소개 -->
+            <tr>
+             	<th><label for="info" > 자기소개 </label></th>
+            </tr>
+           		
+            <tr>
+                <td><textarea class="form-control" rows="5" name="profile" style="margin-bottom: 30px;"></textarea></td>
+           
+            </tr>
+            <!-- 가입 / 취소 -->   
+           <tr>
+              <td colspan="2" style=" text-align: center">
+              <button type="button" class="btn btn-default" onclick="send(this.form);">가입</button>
+              <button type="button" class="btn btn-default" >취소</button>
+              </td>
+           </tr>
+           
+           
+           </table>
+           </form>
+        </div>
+      </div>
+	</div>
+
+</body>
+</html>
+
+

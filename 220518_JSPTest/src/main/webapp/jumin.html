@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+<style type="text/css">
+	input{801212-1234560
+		display: inline-block;
+	}
+
+</style>
+ -->
+<script type="text/javascript">
+
+	var regular_jumin = /^(?:[0-9]{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,1]))-[1-8][0-9]{6}$/;
+
+	function jumin_check(f) {
+		
+		var jumin = f.jumin.value;
+		
+		if(regular_jumin.test(jumin)==false){
+			alert("잘못된 주민번호입니다.");
+			f.jumin.value = '';
+			f.jumin.focus();
+			return;
+		}
+		
+		f.action = "jumin_result.jsp";
+		f.submit();
+		
+	}
+
+</script>
+
+
+
+</head>
+<body>
+
+	<form action="">
+	주민번호 :
+		<input name="jumin">
+		<input type="button" value="확인" onclick="jumin_check(this.form);">
+	
+	
+	</form>
+
+
+</body>
+</html>
