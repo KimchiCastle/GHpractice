@@ -97,15 +97,14 @@ public class backjoon_7568µ¢Ä¡ {
 			@Override
 			public int compare(Dungch o1, Dungch o2) {
 				// TODO Auto-generated method stub
-				return o1.idx-o2.idx;
-			}
-		
+				return o2.idx-o1.idx;
+			}		
 		});
 	
 		
 		
 		for(int i=0; i<arr.length; i++) {
-			sb.append(arr[i].rank).append( i==arr.length-1 ? "" : " " );
+			sb.append(arr[i].rank).append( i==arr.length-1 ? "" : "," );
 		}
 		
 		
