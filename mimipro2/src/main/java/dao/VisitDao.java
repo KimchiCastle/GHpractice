@@ -39,7 +39,7 @@ public class VisitDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from Visit order by idx";
+		String sql = "select * from Visit";
 
 		try {
 			//1.connection 얻어오기
@@ -64,8 +64,8 @@ public class VisitDao {
 				vo.setM_id(rs.getString("m_id"));
 				vo.setPwd(rs.getString("pwd"));
 				vo.setContent(rs.getString("content"));
-				vo.setIp(rs.getString("regdate"));
-				
+				vo.setIp(rs.getString("ip"));
+				vo.setRegdate(rs.getString("regdate"));
 				//list에 추가
 
 				list.add(vo);
