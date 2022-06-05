@@ -156,6 +156,67 @@ public class MemberDao {
 	}
 	
 	
+	//로그인 메소드
+	public MemberVo selectlogin(String m_id) {
+		// TODO Auto-generated method stub
+		MemberVo vo = null;
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		//	parameter(전달 인자) index
+		String sql = "select * from member where m_id = ?";
+		
+		try {
+			//1.connection 얻어오기
+			//				 커낵션 객체생성, DB에게 커낵션얻기
+			conn = DBService.getInstance().getConnection();
+			
+			//2.PreparedStatement 얻어오기
+			pstmt = conn.prepareStatement(sql);
+			
+			//3.pstmt셋팅
+			pstmt.setString(1, m_id);
+			
+			//4.ResultSet 얻어오기
+			
+			rs = pstmt.executeQuery();
+			
+			//5.포장(record -> Vo)
+			if (rs.next()) {
+				//rs가 가리키는 행(레코드)의 값을 읽어온다.
+				
+				//Vo로 포장
+				vo = new MemberVo();
+				vo.setM_idx(rs.getInt("m_idx"));
+				vo.setM_id(rs.getString("m_id"));
+				vo.setM_name(rs.getString("m_name"));
+				vo.setM_pwd(rs.getString("m_pwd"));
+				vo.setM_email(rs.getString("m_email"));
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			
+			try {
+				//연결(생성) 되었으면 닫아라.(생성 역순으로 닫기)
+				if (rs != null)
+					rs.close(); // 3
+				if (pstmt != null)
+					pstmt.close(); // 2
+				if (conn != null)
+					conn.close(); // 1
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return vo;
+	}
 	//m_id에 해당되는 객체 1건 구하기
 	public MemberVo selectlistOneId(String m_id) {
 		// TODO Auto-generated method stub

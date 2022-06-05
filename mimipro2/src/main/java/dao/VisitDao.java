@@ -95,5 +95,58 @@ public class VisitDao {
 		return list;
 	}
 	
+	//글쓰기 Dao 메서드
+	public int insert(VisitVo vo) { // 호출한 사용자가 전달한 값
+		// TODO Auto-generated method stub
+		
+		int res = 0;
+		
+		Connection		   conn  = null;
+		PreparedStatement  pstmt = null;
+		
+		
+		String sql = "insert into visit values(?,seq_visit_v_idx.nextVal, ?, ?, ?, sysdate)";
+		
+		
+		try {
+			//1.Connection 얻어오기
+			conn = DBService.getInstance().getConnection();
+			
+			//2.PreparedStatement 얻어오기
+			pstmt = conn.prepareStatement(sql); // 캐싱
+			
+			//3.pstmt의 변수처리된 parameter 설정과정
+			pstmt.setString(1, vo.getM_id());
+			pstmt.setString(2, vo.getPwd());
+			pstmt.setString(3, vo.getContent());
+			pstmt.setString(4, vo.getIp());
+			
+			
+			//4.DML(insert/update/delete)명령 실행, res는 처리된 행수를반환
+			res = pstmt.executeUpdate();
+			
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			
+		}finally {
+			
+			try {
+				//닫기 (열린 역순)
+				if(pstmt != null) pstmt.close(); // 2
+				if(conn != null) conn.close();   // 1
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
+		}
+		
+		//리턴을 0으로 받으면 명령 실패!
+		return res;
+	}
+	
+	
 }
 

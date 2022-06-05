@@ -32,8 +32,8 @@
 				  title : 'ID를 입력하세요.',
 				  text	: 'ID칸이 비어있습니다.',
 				  didClose: () => {
-						f.member_ID.value = '';
-						f.member_ID.focus();
+						f.m_id.value = '';
+						f.m_id.focus();
 				  }
 				})
 
@@ -50,17 +50,53 @@
 						f.m_pwd.focus();
 				  }
 				})
-
-
 			return;
 		}
 		
-		f.method = "GET"; 
+		$.ajax({
+			
+			type : 'GET',
+			url  : 'login.do',
+			data : { 'm_id':m_id, 'm_pwd':m_pwd },
+			dataType : 'json',
+			success : function(res) {
+				
+				//res = {"result" : true}
+				
+				if(res.result){
+					alert('로그인성공!');
+					
+					location.href='../visit/list_login.do'
+					
+					return;
+					
+					
+				}else{
+					
+					$(function() {
+						
+						$("#fail_m").html('아이디 또는 비밀번호를 잘못 입력했습니다.<br>입력하신 내용을 다시 확인해주세요.').css("color","red");
+						
+						return;
+						
+					});					
+				}
+				
+			},
+			error : function(err){
+			 	alert(err.responseText); 
+			}
+			
+		} ); 
+	/* 	alert('로그인시도');
+		return; */
+		
+/* 		f.method = "GET"; 
 		
 		f.action = "login.do";
 
 		f.submit();
-
+ */
 	}
 
 
@@ -78,7 +114,7 @@
 #main_box {
 	margin: auto;
 	margin-top: 60px;
-	width: 500px;
+	width: 550px;
 	min-height: 300px;
 }
 
@@ -112,6 +148,9 @@
 						<tr>
 							<th><input type="text" class="form-control" name="m_pwd"
 								id="input_box"></th>
+						</tr>
+						<tr>
+							<td><span id="fail_m"></span></td>						
 						</tr>
 						<tr>
 							<th>
