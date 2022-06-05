@@ -3,7 +3,9 @@ package 알고리즘스터디_6주차;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class backjoon_1325BFS해킹 {
@@ -16,6 +18,9 @@ public class backjoon_1325BFS해킹 {
 	
 	static int [] result;
 	
+	static int resCount;
+	
+	static StringBuilder sb;
 	
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
@@ -51,7 +56,6 @@ public class backjoon_1325BFS해킹 {
 			
 			list.add(al);
 			
-			result[i] = i;
 			
 		}
 		
@@ -66,6 +70,76 @@ public class backjoon_1325BFS해킹 {
 			
 			
 		}
+
+//		for (int i = 0; i < list.size(); i++) {
+//			for (int k = 0; k < list.get(i).size(); k++) {
+//
+//				System.out.print(list.get(i).get(k) + " ");
+//			}
+//			System.out.println();
+//		}
+		
+		bfs();
+		
+		System.out.println(sb);
+		
+	}
+
+
+	private static void bfs() {
+		// TODO Auto-generated method stub
+		
+		//탐색용 Queue 선언하기
+		Queue<Integer> q = new LinkedList<Integer>();
+		
+		
+		for(int i=1; i<=N; i++) {
+			boolean [] visit = new boolean[N+1];
+			
+			q.add(i);
+			
+			int count = 0;
+			
+			visit[i] = true;
+			
+			while( !q.isEmpty() ) {
+				
+				int a = q.poll();
+				
+				for(int k : list.get(a))
+				
+				if(visit[k]==false) {
+					count++;
+					visit[k] = true;
+					
+					q.add(k);
+					
+					
+				}
+				
+			}
+			
+			if(resCount<count) {
+				resCount = count;
+			}
+			
+			result[i] = count;
+			
+			
+			
+		}
+		
+		sb = new StringBuilder();
+		
+		for(int i=1; i<=N; i++) {
+			
+			if(result[i]==resCount) {
+				sb.append(i).append(" ");
+			}
+			
+		}
+		
+		
 		
 		
 	}
