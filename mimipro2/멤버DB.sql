@@ -27,6 +27,8 @@ insert into member values(seq_member_m_idx.nextVal, 'duna', '123', '이두나', 'du
 -- 확인
 select * from member
 
+delete from member where m_idx = 4
+
 select m_id from member where m_id = '123'
 
 */

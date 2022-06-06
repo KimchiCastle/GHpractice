@@ -55,13 +55,13 @@
 			    	  //res = {"res":false}
 						if(res.result){ // 사용가능
 							
-							$("#email_msg").html("사용가능한 ID입니다.").css("color","#cccfff");
+							$("#email_msg").html("사용가능한 이메일입니다.").css("color","#cccfff");
 							
 							//가입하기 버튼 활성화
 							$("#btn_register").attr("disabled",false);
 						
 						}else{
-							$("#email_msg").html("이미 사용중인 ID입니다.").css("color","#ffcccc");
+							$("#email_msg").html("이미 사용중인 이메일입니다.").css("color","#ffcccc");
 							
 							//가입하기 버튼 비활성화
 							$("#btn_register").attr("disabled",true);

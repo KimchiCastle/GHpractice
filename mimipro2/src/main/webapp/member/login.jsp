@@ -21,6 +21,9 @@
 
 <script type="text/javascript">
 
+
+
+
 	function login(f){
 		
 		var m_id  = f.m_id.value.trim();
@@ -139,15 +142,15 @@
 			</div>
 			<div class="panel-body">
 
-				<form>
+				<form id="login_form">
 					<table id="id_table">
 						<tr>
 							<th><input type="text" class="form-control" name="m_id"
-								id="input_box"></th>
+								id="input_box" placeholder="I D"></th>
 						</tr>
 						<tr>
 							<th><input type="text" class="form-control" name="m_pwd"
-								id="input_box"></th>
+								id="input_box" placeholder="비밀번호"></th>
 						</tr>
 						<tr>
 							<td><span id="fail_m"></span></td>						
@@ -169,6 +172,7 @@
 
 		</div>
 	</div>
+
 
 </body>
 </html>
