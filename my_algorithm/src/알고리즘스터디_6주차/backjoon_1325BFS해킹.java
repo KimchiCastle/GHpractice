@@ -59,7 +59,7 @@ public class backjoon_1325BFS해킹 {
 			
 		}
 		
-		//리스트에 그래프 연결, 간선만큼 반복하기
+		//리스트에 그래프 구현, 간선만큼 반복하기
 		for(int i=1; i<=E; i++) {
 			st = new StringTokenizer(br.readLine());
 			
@@ -67,7 +67,6 @@ public class backjoon_1325BFS해킹 {
 			int v = Integer.parseInt(st.nextToken());
 			
 			list.get(v).add(u);
-			
 			
 		}
 
@@ -113,7 +112,6 @@ public class backjoon_1325BFS해킹 {
 					visit[k] = true;
 					
 					q.add(k);
-					
 					
 				}
 				
