@@ -93,6 +93,7 @@ public class backjoon_1325BFS«ÿ≈∑ {
 		
 		
 		for(int i=1; i<=N; i++) {
+			
 			boolean [] visit = new boolean[N+1];
 			
 			q.add(i);

@@ -15,7 +15,7 @@ public class backjoon_24444BFS너비우선탐색 {
 	
 	static StringTokenizer st;
 	
-	
+	static StringBuilder sb;
 	
 	static int V, E, R;
 	
